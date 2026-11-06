@@ -209,6 +209,14 @@ img, svg { display: block; max-width: 100%; }
   .email-btn { font-size: 14px; padding: 13px 20px; word-break: break-all; }
 }
 
+@media (max-width: 420px) {
+  .hero-badge { font-size: 10px; letter-spacing: 0.5px; padding: 6px 12px; }
+  .hero-title { font-size: 34px; letter-spacing: -1px; }
+  .hero-quote { padding: 16px 18px; font-size: 14px; }
+  .btn { padding: 12px 18px; font-size: 14px; }
+  .section-title { letter-spacing: -0.6px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .card { transition: none; }
