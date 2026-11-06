@@ -121,6 +121,15 @@
         <p>端到端语音的离散 codec token 与流式推理；TP / PP / EP 并行策略、MFU、prefill-decode 分离。</p>
         <span class="open">开放问题：SLO 约束下的单位 token 推理成本</span>
       </div>
+      <div class="card card-wide">
+        <div class="card-top"><div class="card-icon">05</div><span class="card-label">Evaluation / Business Impact · Cross-cutting</span></div>
+        <h3>评测与业务落地</h3>
+        <div class="wide-body">
+          <p>可验证任务看 pass@k 与 RLVR 奖励，开放生成看人类偏好、LLM-as-a-judge 与 pairwise arena，视频看 VBench 与时序一致性。不同团队的评测需求差别很大，我按业务场景拆口径，不套一套通用榜单。</p>
+          <p>离线指标要落到上线门槛才有意义：灰度与 A/B、时延与单位成本、安全合规、人工抽检的回归集。榜单涨分不等于线上收益；judge 自偏好、benchmark 污染、评测集与真实分布的偏移都会让指标失真。</p>
+        </div>
+        <span class="open">开放问题：怎么把离线代理指标对齐到真实业务收益，并让评测结果反哺数据配比与训练</span>
+      </div>
     </div>
   </div>
 </section>
