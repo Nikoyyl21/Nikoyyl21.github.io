@@ -1,4 +1,37 @@
 (function () {
+  var copyButtons = document.querySelectorAll('.copy-btn[data-copy]');
+  Array.prototype.forEach.call(copyButtons, function (btn) {
+    btn.addEventListener('click', function () {
+      var value = btn.getAttribute('data-copy');
+      var done = function () {
+        var original = btn.textContent;
+        btn.textContent = '已复制';
+        btn.classList.add('copied');
+        window.setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done, function () { fallbackCopy(value, done); });
+      } else {
+        fallbackCopy(value, done);
+      }
+    });
+  });
+  function fallbackCopy(value, done) {
+    var input = document.createElement('textarea');
+    input.value = value;
+    input.style.position = 'fixed';
+    input.style.opacity = '0';
+    document.body.appendChild(input);
+    input.select();
+    try { document.execCommand('copy'); done(); } catch (e) { /* clipboard unavailable */ }
+    document.body.removeChild(input);
+  }
+})();
+
+(function () {
   var toggle = document.getElementById('mobileToggle');
   var nav = document.getElementById('nav');
   if (!toggle || !nav) return;

@@ -183,6 +183,15 @@ img, svg { display: block; max-width: 100%; }
 .email-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; border-radius: var(--radius-full); background: var(--accent); color: #FFFFFF; font-size: 17px; font-weight: 650; font-family: var(--mono); box-shadow: var(--shadow-md); }
 .email-btn:hover { background: var(--accent-strong); color: #FFFFFF; text-decoration: none; }
 @media (prefers-color-scheme: dark) { .email-btn, .email-btn:hover { color: #08182A; } }
+.hero-wechat { margin: 18px 0 0; font-size: 14px; color: var(--text-soft); }
+.hero-wechat code { font-family: var(--mono); font-size: 14px; font-weight: 650; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 8px; }
+.wechat-row { display: flex; width: fit-content; max-width: 100%; margin: 22px auto 8px; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; padding: 10px 16px; border-radius: var(--radius-full); background: var(--surface-soft); border: 1px solid var(--border); }
+.wechat-label { font-size: 13px; color: var(--text-faint); letter-spacing: 0.3px; }
+.wechat-id { font-family: var(--mono); font-size: 16px; font-weight: 650; letter-spacing: 0.5px; color: var(--text); }
+.copy-btn { padding: 6px 14px; border-radius: var(--radius-full); border: 1px solid var(--border); background: var(--surface); color: var(--accent); font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; }
+.copy-btn:hover { border-color: var(--accent); }
+.copy-btn.copied { color: var(--accent-strong); border-color: var(--accent-strong); }
+.connect-box p.wechat-hint { margin: 0 0 20px; font-size: 13px; color: var(--text-faint); }
 .privacy { margin-top: 26px; padding: 18px 20px; border-radius: var(--radius-md); background: var(--surface-soft); border: 1px dashed var(--border); color: var(--text-soft); font-size: 14px; text-align: left; }
 .connect-links { margin-top: 22px; font-size: 14px; color: var(--text-faint); }
 .connect-links a { color: var(--text-soft); }
