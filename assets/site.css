@@ -163,6 +163,16 @@ img, svg { display: block; max-width: 100%; }
 .card h3 { margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
 .card p { margin: 0; color: var(--text-soft); font-size: 15px; }
 .card .open { display: block; margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--border); color: var(--accent); font-size: 13.5px; font-weight: 600; }
+.card-featured { background: var(--surface-soft); box-shadow: var(--shadow-md); }
+.card-featured .card-icon { background: var(--accent); color: #FFFFFF; }
+@media (prefers-color-scheme: dark) { .card-featured .card-icon { color: #08182A; } }
+.sub-list { list-style: none; margin: 0; padding: 0; }
+.sub-list li { position: relative; padding-left: 15px; margin: 10px 0; color: var(--text-soft); font-size: 14px; line-height: 1.65; }
+.sub-list li::before { content: ""; position: absolute; left: 0; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.6; }
+.sub-list strong { color: var(--text); font-weight: 650; }
+#focus .card { display: flex; flex-direction: column; }
+#focus .card > .sub-list, #focus .card > .wide-body { margin-bottom: 16px; }
+#focus .card .open { margin-top: auto; }
 .card-wide { grid-column: 1 / -1; }
 .wide-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
 .wide-body p { font-size: 14.5px; line-height: 1.72; }

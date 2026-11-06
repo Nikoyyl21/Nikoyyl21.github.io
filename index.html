@@ -94,32 +94,48 @@
     <div class="section-head">
       <span class="eyebrow">Focus &amp; Expertise</span>
       <h2 class="section-title">核心关注方向</h2>
-      <p class="section-lead">按方法族归档，不按产品名归档。每条方向都写清方法、真实取舍，以及还没解决的问题。</p>
+      <p class="section-lead">按方法族归档，不按产品名归档。基座与后训练合为一条主线，其余方向各自拆细；每条都写清方法、真实取舍，以及还没解决的问题。</p>
     </div>
     <div class="grid grid-4">
+      <div class="card card-featured">
+        <div class="card-top"><div class="card-icon">01</div><span class="card-label">Foundation Models / Post-training · Core</span></div>
+        <h3>文本基座与后训练</h3>
+        <ul class="sub-list">
+          <li><strong>预训练与架构</strong>：MoE 专家路由与稀疏激活、数据配比与 mid-training 退火、RoPE 外推与 KV cache 成本</li>
+          <li><strong>后训练与对齐</strong>：DPO / PPO / GRPO 一族、RLVR 与可验证奖励、process reward model、扩散语言模型上的 RL 对齐（dLLM / EBPO）</li>
+          <li><strong>真实代价</strong>：reward hacking、KL 约束的取舍、scaling law 之外的数据墙</li>
+        </ul>
+        <span class="open">开放问题：后训练收益有多少来自基座能力本身，对齐代价与可验证奖励的泛化性怎么分开度量</span>
+      </div>
       <div class="card">
-        <div class="card-top"><div class="card-icon">01</div><span class="card-label">Multimodal / Video</span></div>
+        <div class="card-top"><div class="card-icon">02</div><span class="card-label">Multimodal / Video</span></div>
         <h3>多模态与视频生成</h3>
-        <p>DiT 与 flow matching、基于 GRPO 的奖励优化（Flow-GRPO / VideoReward）、时空 VAE 压缩比与长时序一致性。</p>
-        <span class="open">开放问题：可控性与运动物理合理性，仍缺可靠的自动评测代理</span>
+        <ul class="sub-list">
+          <li><strong>生成架构</strong>：DiT 与 flow matching、时空 VAE 压缩比、长时序一致性</li>
+          <li><strong>奖励与可控</strong>：基于 GRPO 的奖励优化（Flow-GRPO / VideoReward）、运动物理合理性</li>
+          <li><strong>数据与算力</strong>：训练数据配比与时空压缩的取舍，VBench 等自动指标和人类偏好之间仍有差距</li>
+        </ul>
+        <span class="open">开放问题：可控性仍缺可靠的自动评测代理</span>
       </div>
       <div class="card">
-        <div class="card-top"><div class="card-icon">02</div><span class="card-label">Post-training / Alignment</span></div>
-        <h3>后训练与对齐</h3>
-        <p>DPO / PPO / GRPO 一族、RLVR 与可验证奖励、process reward model、扩散语言模型上的 RL 对齐（dLLM / EBPO）。</p>
-        <span class="open">开放问题：reward hacking 与 KL 约束的真实代价</span>
+        <div class="card-top"><div class="card-icon">03</div><span class="card-label">Speech / Audio</span></div>
+        <h3>语音</h3>
+        <ul class="sub-list">
+          <li><strong>端到端语音</strong>：离散 codec token、流式推理与实时交互时延</li>
+          <li><strong>多模态衔接</strong>：语音与文本、视觉的共享表征，副语言信息建模</li>
+          <li><strong>工程约束</strong>：首包时延、长语音稳定性与端侧推理成本</li>
+        </ul>
+        <span class="open">开放问题：自然度上去之后，可控性与可复现性怎么保证</span>
       </div>
       <div class="card">
-        <div class="card-top"><div class="card-icon">03</div><span class="card-label">Foundation Models</span></div>
-        <h3>文本大模型</h3>
-        <p>MoE 专家路由与稀疏激活、预训练数据配比与 mid-training 退火、长上下文的 RoPE 外推与 KV cache 成本。</p>
-        <span class="open">开放问题：scaling law 之外的数据墙</span>
-      </div>
-      <div class="card">
-        <div class="card-top"><div class="card-icon">04</div><span class="card-label">Speech / Infra</span></div>
-        <h3>语音与 Infra</h3>
-        <p>端到端语音的离散 codec token 与流式推理；TP / PP / EP 并行策略、MFU、prefill-decode 分离。</p>
-        <span class="open">开放问题：SLO 约束下的单位 token 推理成本</span>
+        <div class="card-top"><div class="card-icon">04</div><span class="card-label">Systems / Infra</span></div>
+        <h3>Infra 与推理系统</h3>
+        <ul class="sub-list">
+          <li><strong>训练侧</strong>：TP / PP / EP 并行策略、MFU、训练稳定性</li>
+          <li><strong>推理侧</strong>：prefill-decode 分离、KV cache 与量化、SLO 下的单位 token 成本</li>
+          <li><strong>效率取舍</strong>：集群利用率与弹性调度、量化带来的精度损失</li>
+        </ul>
+        <span class="open">开放问题：集群规模、训练稳定性与推理成本之间的真实边界</span>
       </div>
       <div class="card card-wide">
         <div class="card-top"><div class="card-icon">05</div><span class="card-label">Evaluation / Business Impact · Cross-cutting</span></div>
