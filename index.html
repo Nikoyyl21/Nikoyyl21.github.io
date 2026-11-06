@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petry · 基模与多模态方向顾问</title>
+<meta name="description" content="以公开技术报告为一手材料，跟踪基模与多模态的方法演进。和研究员一起判断下一个值得投入的问题。">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="#about" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="#0969DA" stroke-width="1.6" stroke-dasharray="3 4" opacity=".6"/>
+        <circle cx="20" cy="20" r="10" fill="#E3F0FF" stroke="#0969DA" stroke-width="1.6"/>
+        <circle cx="16" cy="17" r="2" fill="#0969DA"/><circle cx="24" cy="17" r="2" fill="#0969DA"/>
+        <circle cx="16" cy="23" r="2" fill="#0969DA" opacity=".4"/><circle cx="24" cy="23" r="2" fill="#0969DA"/>
+      </svg>
+      Petry
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#focus" class="nav-link">Focus</a>
+      <a href="#method" class="nav-link">Method</a>
+      <a href="#who" class="nav-link">Who</a>
+      <a href="#why" class="nav-link">Why Me</a>
+      <a href="#connect" class="nav-link">Connect</a>
+      <a href="https://github.com/Nikoyyl21?tab=repositories" class="nav-link">公开资料 ↗</a>
+      <a href="#connect" class="header-cta">发封邮件</a>
+    </nav>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="展开导航" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="about">
+  <div class="hero-grid"></div>
+
+  <svg class="hero-deco right" viewBox="0 0 360 300" aria-hidden="true">
+    <g stroke="#7FB0E0" stroke-width="1.3" fill="none" opacity=".7">
+      <path d="M40 70 C120 70 140 130 210 130 S300 60 340 50"/>
+      <path d="M40 150 C120 150 140 130 210 130 S300 200 340 210"/>
+      <path d="M40 230 C120 230 140 160 210 130"/>
+      <ellipse cx="210" cy="130" rx="70" ry="70" stroke-dasharray="3 7"/>
+    </g>
+    <g fill="#0969DA">
+      <circle cx="210" cy="130" r="5"/><circle cx="340" cy="50" r="4"/><circle cx="340" cy="210" r="4"/>
+    </g>
+    <g fill="#7FB0E0" opacity=".7">
+      <circle cx="40" cy="70" r="3.5"/><circle cx="40" cy="150" r="3.5"/><circle cx="40" cy="230" r="3.5"/>
+    </g>
+  </svg>
+
+  <svg class="hero-deco left" viewBox="0 0 260 200" aria-hidden="true">
+    <g stroke="#9CC5EE" stroke-width="1.2" fill="none" opacity=".7">
+      <path d="M0 160 C70 120 120 180 190 90 S240 40 260 30"/>
+      <path d="M0 185 C75 145 125 205 195 115 S240 65 260 55"/>
+    </g>
+    <g fill="#8FB8E2" opacity=".65">
+      <circle cx="30" cy="40" r="2.2"/><circle cx="50" cy="40" r="2.2"/><circle cx="70" cy="40" r="2.2"/>
+      <circle cx="30" cy="60" r="2.2"/><circle cx="70" cy="60" r="2.2"/>
+      <circle cx="30" cy="80" r="2.2"/><circle cx="50" cy="80" r="2.2"/><circle cx="70" cy="80" r="2.2"/>
+    </g>
+    <g fill="#0969DA"><circle cx="50" cy="60" r="2.8"/><circle cx="70" cy="100" r="2.8"/></g>
+  </svg>
+
+  <div class="container hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>FOUNDATION MODELS · MULTIMODAL · AGI</div>
+    <h1 class="hero-title">你好，我是 <span class="accent">Petry</span></h1>
+    <p class="hero-subtitle">专注基模与多模态生成的 AI 方向职业顾问<br>先聊你在做的具体问题，不先聊岗位清单</p>
+    <div class="hero-cta-row">
+      <a href="mailto:18357766985@163.com" class="btn btn-primary">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+        发封邮件，聊 15 分钟
+      </a>
+      <a href="#focus" class="btn btn-secondary">
+        了解我的方向
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="18 14 12 20 6 14"/></svg>
+      </a>
+    </div>
+    <div class="hero-quote">
+      <span class="mark">&ldquo;</span>
+      <span>以公开技术报告、论文和开源实现为一手材料，把一条路线真正在解什么问题、代价是什么讲清楚。查不到就写查不到。</span>
+    </div>
+    <div class="hero-meta">DiT / GRPO / MoE / EP · method families, not job lists</div>
+  </div>
+</section>
+
+<section class="section" id="focus">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Focus &amp; Expertise</span>
+      <h2 class="section-title">核心关注方向</h2>
+      <p class="section-lead">按方法族归档，不按产品名归档。每条方向都写清方法、真实取舍，以及还没解决的问题。</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="card-top"><div class="card-icon">01</div><span class="card-label">Multimodal / Video</span></div>
+        <h3>多模态与视频生成</h3>
+        <p>DiT 与 flow matching、基于 GRPO 的奖励优化（Flow-GRPO / VideoReward）、时空 VAE 压缩比与长时序一致性。</p>
+        <span class="open">开放问题：可控性与运动物理合理性，仍缺可靠的自动评测代理</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><div class="card-icon">02</div><span class="card-label">Post-training / Alignment</span></div>
+        <h3>后训练与对齐</h3>
+        <p>DPO / PPO / GRPO 一族、RLVR 与可验证奖励、process reward model、扩散语言模型上的 RL 对齐（dLLM / EBPO）。</p>
+        <span class="open">开放问题：reward hacking 与 KL 约束的真实代价</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><div class="card-icon">03</div><span class="card-label">Foundation Models</span></div>
+        <h3>文本大模型</h3>
+        <p>MoE 专家路由与稀疏激活、预训练数据配比与 mid-training 退火、长上下文的 RoPE 外推与 KV cache 成本。</p>
+        <span class="open">开放问题：scaling law 之外的数据墙</span>
+      </div>
+      <div class="card">
+        <div class="card-top"><div class="card-icon">04</div><span class="card-label">Speech / Infra</span></div>
+        <h3>语音与 Infra</h3>
+        <p>端到端语音的离散 codec token 与流式推理；TP / PP / EP 并行策略、MFU、prefill-decode 分离。</p>
+        <span class="open">开放问题：SLO 约束下的单位 token 推理成本</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="method">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">How I Read A Report</span>
+      <h2 class="section-title">怎么读一份技术报告</h2>
+      <p class="section-lead">这是我全部判断的依据，也是公开资料仓库的整理方式。</p>
+    </div>
+    <div class="grid grid-3 numbered">
+      <div class="card number-item">
+        <span class="num">01</span>
+        <h3>按方法族归档</h3>
+        <p>同一条路线在不同实现里的差异，比发布顺序更有信息量。不按产品名堆清单。</p>
+      </div>
+      <div class="card number-item">
+        <span class="num">02</span>
+        <h3>多源交叉核验</h3>
+        <p>OpenReview、arXiv、DBLP、机构主页和开源实现互相印证；同名歧义保留候选，不强行合并。</p>
+      </div>
+      <div class="card number-item">
+        <span class="num">03</span>
+        <h3>标注来源与置信度</h3>
+        <p>每条判断都标来源。查不到就写查不到，不补推测，不把推断伪装成事实。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="who">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Who I Talk To</span>
+      <h2 class="section-title">我在找谁</h2>
+      <p class="section-lead">不同背景的人关心的问题不一样，聊法也不一样。</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card who-card">
+        <span class="tag">研究员</span>
+        <h3>想判断方向，或比较路线差异</h3>
+        <p>从你在做的具体问题聊起：基模能力边界、奖励信号设计，或者一个方法在更大规模上还成不成立。</p>
+      </div>
+      <div class="card who-card">
+        <span class="tag">Infra 与系统</span>
+        <h3>关心 MFU、并行策略、推理成本</h3>
+        <p>TP / PP / EP 怎么切、prefill-decode 分离是不是真落地、集群拓扑和 SLO 的实际约束，都能摊开讲。</p>
+      </div>
+      <div class="card who-card">
+        <span class="tag">多模态与生成</span>
+        <h3>视频、图像、语音生成方向</h3>
+        <p>数据配比、时空压缩比、奖励模型怎么建、评测靠 VBench 还是人类偏好对齐，这些值得先聊清楚。</p>
+      </div>
+      <div class="card who-card">
+        <span class="tag">暂时不想动的人</span>
+        <h3>只想先了解发生了什么</h3>
+        <p>不做任何决定也没关系，这类聊天我同样欢迎。先匿名聊方向就行。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Work With Me</span>
+      <h2 class="section-title">为什么可以跟我聊</h2>
+      <p class="section-lead">研究员判断一个人值不值得聊，看的是有没有说出方法的代价，不是关键词密度。</p>
+    </div>
+    <div class="grid grid-3 numbered">
+      <div class="card number-item">
+        <span class="num">01</span>
+        <h3>按技术脉络梳理</h3>
+        <p>按方法族和算力约束做梳理，不按 JD 关键词做匹配。能说清一条路线为什么被选中。</p>
+      </div>
+      <div class="card number-item">
+        <span class="num">02</span>
+        <h3>给横向取舍</h3>
+        <p>同一技术维度上不同实现的差异，包括各自的代价和不那么好看的部分。</p>
+      </div>
+      <div class="card number-item">
+        <span class="num">03</span>
+        <h3>不合适会直说</h3>
+        <p>不硬推，不共享给第三方。可以先不透露姓名和现单位，你的信息不会出现在任何公开列表里。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section connect" id="connect">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Let's Connect</span>
+      <h2 class="section-title">取得联系</h2>
+      <p class="section-lead">想判断下一个方向，或者只是想了解发生了什么，都可以先聊 15 分钟。</p>
+    </div>
+    <div class="connect-box">
+      <h3>先匿名聊方向，不用附简历</h3>
+      <p>一封短邮件就够，标题写你想聊的方向。</p>
+      <a class="email-btn" href="mailto:18357766985@163.com">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+        18357766985@163.com
+      </a>
+      <div class="privacy">
+        一对一沟通，不共享给任何第三方。可以先不透露姓名和现单位，只聊方向。你的信息不会出现在任何公开仓库或公开列表里。
+      </div>
+      <div class="connect-links">
+        公开资料：<a href="https://github.com/Nikoyyl21">GitHub 主页</a> ·
+        <a href="https://github.com/Nikoyyl21/team-map">团队技术图谱</a> ·
+        <a href="https://github.com/Nikoyyl21/author-index">论文作者索引</a> ·
+        <a href="https://github.com/Nikoyyl21/direction-timeline">方向演进时间线</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p class="slogan">把一个问题真正解什么、代价是什么讲清楚，再谈下一步。</p>
+    <p class="meta">© 2026 Petry · 公开资料整理，不含候选人信息与在招团队细节</p>
+    <div class="footer-nav">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#method">Method</a>
+      <a href="#who">Who</a>
+      <a href="#connect">Connect</a>
+      <a href="https://github.com/Nikoyyl21">GitHub ↗</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
