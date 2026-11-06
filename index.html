@@ -29,7 +29,7 @@
       <a href="#why" class="nav-link">Why Me</a>
       <a href="#connect" class="nav-link">Connect</a>
       <a href="https://github.com/Nikoyyl21?tab=repositories" class="nav-link">公开资料 ↗</a>
-      <a href="#connect" class="header-cta">发封邮件</a>
+      <button type="button" class="header-cta" data-open-phone>简单聊 15 mins</button>
     </nav>
     <button class="mobile-toggle" id="mobileToggle" aria-label="展开导航" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -71,16 +71,16 @@
     <h1 class="hero-title">你好，我是 <span class="accent">Petry</span></h1>
     <p class="hero-subtitle">专注基模与多模态生成的 AI 方向职业顾问<br>先聊你在做的具体问题，不先聊岗位清单</p>
     <div class="hero-cta-row">
-      <a href="mailto:18357766985@163.com" class="btn btn-primary">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
-        发封邮件，聊 15 分钟
-      </a>
+      <button type="button" class="btn btn-primary" data-open-phone>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        简单聊 15 mins
+      </button>
       <a href="#focus" class="btn btn-secondary">
         了解我的方向
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="18 14 12 20 6 14"/></svg>
       </a>
     </div>
-    <p class="hero-wechat">或加微信 <code>Hello_le_0502</code>　·　15 分钟，可以先不透露姓名和现单位</p>
+    <p class="hero-wechat">也可以加微信 <code>Hello_le_0502</code>　·　15 分钟，可以先不透露姓名和现单位</p>
     <div class="hero-quote">
       <span class="mark">&ldquo;</span>
       <span>以公开技术报告、论文和开源实现为一手材料，把一条路线真正在解什么问题、代价是什么讲清楚。查不到就写查不到。</span>
@@ -237,11 +237,12 @@
     </div>
     <div class="connect-box">
       <h3>先匿名聊方向，不用附简历</h3>
-      <p>一封短邮件就够，标题写你想聊的方向。</p>
-      <a class="email-btn" href="mailto:18357766985@163.com">
-        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
-        18357766985@163.com
-      </a>
+      <p>点一下就能看到电话，直接聊 15 分钟，不用附简历。</p>
+      <button type="button" class="email-btn" data-open-phone>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        简单聊 15 mins
+      </button>
+      <p class="email-alt">也可以发邮件到 <a href="mailto:18357766985@163.com">18357766985@163.com</a></p>
       <div class="wechat-row">
         <span class="wechat-label">微信 / WeChat</span>
         <code class="wechat-id">Hello_le_0502</code>
@@ -275,6 +276,23 @@
     </div>
   </div>
 </footer>
+
+
+<div class="phone-modal" id="phoneModal" role="dialog" aria-modal="true" aria-labelledby="phoneTitle" aria-hidden="true">
+  <div class="phone-backdrop" data-close-phone></div>
+  <div class="phone-card" tabindex="-1">
+    <button type="button" class="phone-close" data-close-phone aria-label="关闭">&times;</button>
+    <span class="phone-eyebrow">15-MIN CHAT</span>
+    <h3 id="phoneTitle">简单聊 15 mins</h3>
+    <p class="phone-lead">电话在这里，直接拨或者存一下都行。</p>
+    <a class="phone-number" href="tel:18357766985">18357766985</a>
+    <div class="phone-actions">
+      <a class="phone-call" href="tel:18357766985">直接拨打</a>
+      <button type="button" class="copy-btn" data-copy="18357766985">复制号码</button>
+    </div>
+    <p class="phone-note">一对一沟通，不共享给任何第三方。可以先不透露姓名和现单位，只聊方向；不用附简历。</p>
+  </div>
+</div>
 
 <script src="assets/site.js"></script>
 </body>

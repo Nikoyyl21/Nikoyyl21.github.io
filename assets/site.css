@@ -209,6 +209,32 @@ img, svg { display: block; max-width: 100%; }
 .connect-links { margin-top: 22px; font-size: 14px; color: var(--text-faint); }
 .connect-links a { color: var(--text-soft); }
 
+/* ---------- phone reveal ---------- */
+.header-cta, .btn-primary, .email-btn { font-family: inherit; border: 0; cursor: pointer; }
+.email-alt { margin: 14px 0 0; font-size: 13px; color: var(--text-faint); }
+.email-alt a { color: var(--text-soft); }
+.phone-modal { display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; padding: 20px; }
+.phone-modal.open { display: flex; }
+.phone-backdrop { position: absolute; inset: 0; background: rgba(8, 30, 55, 0.42); backdrop-filter: blur(3px); }
+.phone-card { position: relative; width: min(100%, 420px); padding: 36px 32px 30px; border-radius: var(--radius-lg); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); text-align: center; animation: phone-in 180ms ease-out; }
+@keyframes phone-in { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
+.phone-close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface-soft); color: var(--text-soft); font-size: 20px; line-height: 1; cursor: pointer; }
+.phone-close:hover { color: var(--accent); border-color: var(--accent); }
+.phone-card:focus { outline: none; }
+.phone-number:focus-visible, .phone-close:focus-visible, .phone-call:focus-visible, .phone-actions .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.phone-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 1.4px; color: var(--text-faint); }
+.phone-card h3 { margin: 10px 0 8px; font-size: 24px; font-weight: 750; }
+.phone-lead { margin: 0 0 22px; color: var(--text-soft); font-size: 14px; }
+.phone-number { display: block; font-family: var(--mono); font-size: clamp(28px, 7vw, 36px); font-weight: 700; letter-spacing: 1.5px; color: var(--accent); text-decoration: none; }
+.phone-number:hover { text-decoration: underline; }
+.phone-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 22px 0 18px; }
+.phone-call { display: inline-flex; align-items: center; padding: 8px 18px; border-radius: var(--radius-full); background: var(--accent); color: #FFFFFF; font-size: 14px; font-weight: 600; }
+.phone-call:hover { background: var(--accent-strong); color: #FFFFFF; text-decoration: none; }
+.phone-note { margin: 0; padding-top: 16px; border-top: 1px dashed var(--border); color: var(--text-faint); font-size: 12.5px; line-height: 1.6; text-align: left; }
+body.phone-open { overflow: hidden; }
+@media (prefers-color-scheme: dark) { .phone-backdrop { background: rgba(2, 10, 20, 0.62); } .phone-call, .phone-call:hover { color: #08182A; } }
+@media (max-width: 420px) { .phone-card { padding: 32px 22px 26px; } }
+
 /* ---------- footer ---------- */
 .footer { padding: 48px 0 40px; border-top: 1px solid var(--border); background: var(--surface-soft); text-align: center; }
 .footer .slogan { margin: 0 0 10px; font-size: 17px; font-weight: 650; }

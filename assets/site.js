@@ -42,7 +42,7 @@
   });
 
   nav.addEventListener('click', function (e) {
-    if (e.target.closest('a')) {
+    if (e.target.closest('a') || e.target.closest('[data-open-phone]')) {
       nav.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
     }
@@ -64,4 +64,38 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(function (s) { observer.observe(s); });
   }
+})();
+
+
+(function () {
+  var modal = document.getElementById('phoneModal');
+  if (!modal) return;
+  var openers = document.querySelectorAll('[data-open-phone]');
+  var closers = modal.querySelectorAll('[data-close-phone]');
+  var lastFocus = null;
+
+  function open() {
+    lastFocus = document.activeElement;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('phone-open');
+    var card = modal.querySelector('.phone-card');
+    if (card) card.focus();
+  }
+  function close() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('phone-open');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  Array.prototype.forEach.call(openers, function (btn) {
+    btn.addEventListener('click', function (e) { e.preventDefault(); open(); });
+  });
+  Array.prototype.forEach.call(closers, function (el) {
+    el.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) close();
+  });
 })();
