@@ -99,3 +99,24 @@
     if (e.key === 'Escape' && modal.classList.contains('open')) close();
   });
 })();
+
+(function () {
+  var chips = document.querySelectorAll('.filter-chip[data-filter]');
+  var cards = document.querySelectorAll('#teamsGrid .team-card');
+  if (!chips.length || !cards.length) return;
+
+  Array.prototype.forEach.call(chips, function (chip) {
+    chip.addEventListener('click', function () {
+      var filter = chip.getAttribute('data-filter');
+      Array.prototype.forEach.call(chips, function (c) {
+        var on = c === chip;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      Array.prototype.forEach.call(cards, function (card) {
+        var cities = (card.getAttribute('data-city') || '').split(/\s+/);
+        card.classList.toggle('is-hidden', filter !== 'all' && cities.indexOf(filter) === -1);
+      });
+    });
+  });
+})();

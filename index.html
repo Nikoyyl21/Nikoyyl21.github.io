@@ -26,6 +26,7 @@
       <a href="#focus" class="nav-link">关注方向</a>
       <a href="#intro" class="nav-link">自我介绍</a>
       <a href="#who" class="nav-link">和谁聊</a>
+      <a href="#teams" class="nav-link">团队地图</a>
       <a href="#why" class="nav-link">怎么聊</a>
       <a href="#connect" class="nav-link">联系</a>
       <a href="https://github.com/Nikoyyl21?tab=repositories" class="nav-link">公开资料 ↗</a>
@@ -192,6 +193,144 @@
   </div>
 </section>
 
+<section class="section teams" id="teams">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Teams &amp; Roles</span>
+      <h2 class="section-title">常聊的一线团队</h2>
+      <p class="section-lead">按公司归类，写到具体团队、平时在做的方向和办公地点。想细聊哪条线，直接说就行。</p>
+    </div>
+
+    <div class="teams-filters" role="group" aria-label="按城市筛选">
+      <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">全部 <span>10</span></button>
+      <button type="button" class="filter-chip" data-filter="beijing" aria-pressed="false">北京 <span>9</span></button>
+      <button type="button" class="filter-chip" data-filter="shanghai" aria-pressed="false">上海 <span>4</span></button>
+      <button type="button" class="filter-chip" data-filter="hangzhou" aria-pressed="false">杭州 <span>3</span></button>
+      <button type="button" class="filter-chip" data-filter="shenzhen" aria-pressed="false">深圳 <span>1</span></button>
+    </div>
+
+    <div class="teams-grid" id="teamsGrid">
+      <article class="team-card" data-city="hangzhou beijing">
+        <div class="team-head">
+          <span class="team-index">01</span>
+          <div class="team-id"><h3>阿里 · 千问 / 通义</h3><span class="team-city">杭州 · 北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基础模型组 · 预训练 / 后训练</span><p>数据配比、MoE 路由与长上下文，后训练侧做 DPO / GRPO 一族与可验证奖励。常见画像是能独立带一条方法线、有技术报告署名的研究员。</p></li>
+          <li class="role-item"><span class="role-name">Qwen-VL · 多模态</span><p>图文理解、视觉指令跟随与跨模态对齐。会问预训练数据怎么配、评测口径怎么定，以及换一个任务还成不成立。</p></li>
+          <li class="role-item"><span class="role-name">Agent / Code 方向</span><p>工具调用、长程任务与代码智能体；关注 Agentic RL 的奖励从哪来、评测怎么闭环。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shenzhen beijing">
+        <div class="team-head">
+          <span class="team-index">02</span>
+          <div class="team-id"><h3>腾讯 · 混元</h3><span class="team-city">深圳 · 北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">视频 / 图像生成</span><p>DiT 与 flow matching、时空 VAE、长时序一致性，以及参考主体一致性和指令式编辑。常见画像是做过多模态生成预训练的人。</p></li>
+          <li class="role-item"><span class="role-name">基模后训练 / 对齐</span><p>RLVR、过程奖励，以及扩散语言模型上的对齐方法。会问对齐之后通用能力掉了多少、奖励有没有被刷。</p></li>
+          <li class="role-item"><span class="role-name">训练与推理系统</span><p>并行策略、prefill-decode 分离、KV cache 与单位 token 成本；聊的时候会先问集群规模和优化前的基线。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing shanghai hangzhou">
+        <div class="team-head">
+          <span class="team-index">03</span>
+          <div class="team-id"><h3>字节 · Seed</h3><span class="team-city">北京 · 上海 · 杭州</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基座预训练</span><p>数据配比与 mid-training、MoE 稀疏激活、长上下文外推；常见画像是能把方法从论文推到大规模训练的人。</p></li>
+          <li class="role-item"><span class="role-name">后训练 / Agentic</span><p>RL 与可验证奖励、Code 与 Agent 方向、多智能体与 RSI 一类长程任务。</p></li>
+          <li class="role-item"><span class="role-name">数据全链路</span><p>语料清洗去重、质量过滤与配比，和数据团队配合紧密；这类岗位我会先问你负责的是哪一段。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing">
+        <div class="team-head">
+          <span class="team-index">04</span>
+          <div class="team-id"><h3>智谱 · GLM</h3><span class="team-city">北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">GLM 基座</span><p>预训练与后训练全链路、MoE 与长上下文。常见画像是偏学术背景、有论文产出、能说清方法取舍的研究员。</p></li>
+          <li class="role-item"><span class="role-name">多模态 / Agent</span><p>图文理解与工具调用、长程任务和 Agent 评测；关注可验证奖励怎么设计。</p></li>
+          <li class="role-item"><span class="role-name">CodeGeeX · 代码方向</span><p>代码大模型的训练、评测与实际落地场景，工程和研究的边界比较模糊。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing">
+        <div class="team-head">
+          <span class="team-index">05</span>
+          <div class="team-id"><h3>快手 · 可灵 / Keye / KAT</h3><span class="team-city">北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">可灵 · 视频生成</span><p>DiT / flow matching、参考与编辑生成、Flow-GRPO 和 VideoReward 一类的奖励优化；常见画像是 3D 视觉或图形背景转视频生成的人。</p></li>
+          <li class="role-item"><span class="role-name">Keye · 多模态理解</span><p>视频理解与多模态 LLM，评测口径怎么定、和生成侧怎么互相借用，是常聊的问题。</p></li>
+          <li class="role-item"><span class="role-name">KAT · 文本基座</span><p>预训练与后训练核心方向，会问这次涨分主要来自基座还是后训练。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing">
+        <div class="team-head">
+          <span class="team-index">06</span>
+          <div class="team-id"><h3>美团 · LongCat</h3><span class="team-city">北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">LLM 预训练 / 基模</span><p>长上下文、MoE 与数据配比，关注训练稳定性和规模上去之后方法还成不成立。</p></li>
+          <li class="role-item"><span class="role-name">后训练 / 对齐</span><p>dLLM 与 RL 对齐方向，可验证奖励、奖励信号怎么验，以及对齐后的能力回退。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai beijing">
+        <div class="team-head">
+          <span class="team-index">07</span>
+          <div class="team-id"><h3>阶跃星辰 · Step</h3><span class="team-city">上海 · 北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">文本基座</span><p>Step 系列 MoE 架构、预训练数据与长上下文；常见画像是能扛大规模训练实验的人。</p></li>
+          <li class="role-item"><span class="role-name">多模态 · 视频与图像</span><p>生成结构、参考一致性、时空建模；语音作为另一路模态顺带覆盖。</p></li>
+          <li class="role-item"><span class="role-name">训练 / 推理系统</span><p>训练框架、推理与算子优化，和基座属于同一套工程链路。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="hangzhou beijing shanghai">
+        <div class="team-head">
+          <span class="team-index">08</span>
+          <div class="team-id"><h3>蚂蚁集团 · 百灵</h3><span class="team-city">杭州 · 北京 · 上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">垂域后训练</span><p>金融场景下的 SFT 与对齐，关注领域数据怎么配、通用能力怎么保住。</p></li>
+          <li class="role-item"><span class="role-name">Agent / dLLM 后训练</span><p>LLM 与扩散语言模型上的 DPO / GRPO 类对齐方法、奖励信号设计与评测。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing">
+        <div class="team-head">
+          <span class="team-index">09</span>
+          <div class="team-id"><h3>百度 · 文心</h3><span class="team-city">北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基模与多模态</span><p>预训练、后训练，以及图文理解与图像生成方向。</p></li>
+          <li class="role-item"><span class="role-name">图像算法</span><p>图像生成与编辑、效果评测和业务落地；常见画像是偏 CV / 生成背景的研究员。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai">
+        <div class="team-head">
+          <span class="team-index">10</span>
+          <div class="team-id"><h3>MiniMax</h3><span class="team-city">上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基座团队</span><p>预训练、后训练与多模态全链路；聊的时候会先看方法细节，而不是关键词。</p></li>
+          <li class="role-item"><span class="role-name">推理与效率</span><p>长上下文与推理成本，会问优化前后的基线和实际并发目标。</p></li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="teams-note">按公开资料整理，写的是这些团队长期在做的方向和常见职位画像，不是实时在招 JD。具体岗位、层级、HC 和办公地点，聊的时候按最新情况说；哪些是我在跟的项目，也只在一对一里讲。</p>
+  </div>
+</section>
+
 <section class="section alt" id="why">
   <div class="container">
     <div class="section-head">
@@ -256,12 +395,13 @@
 <footer class="footer">
   <div class="container">
     <p class="slogan">先把方向聊清楚，再谈下一步。</p>
-    <p class="meta">© 2026 Petry · 公开资料整理，不含候选人信息与在招团队细节</p>
+    <p class="meta">© 2026 Petry · 团队方向均来自公开资料，不含候选人信息与未公开岗位细节</p>
     <div class="footer-nav">
       <a href="#about">关于我</a>
       <a href="#focus">关注方向</a>
       <a href="#intro">自我介绍</a>
       <a href="#who">和谁聊</a>
+      <a href="#teams">团队地图</a>
       <a href="#connect">联系</a>
       <a href="https://github.com/Nikoyyl21">GitHub ↗</a>
     </div>
