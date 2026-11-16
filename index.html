@@ -134,10 +134,10 @@
     <g fill="#238353"><circle cx="50" cy="60" r="2.8"/><circle cx="70" cy="100" r="2.8"/></g>
   </svg>
 
-  <svg class="sticker sticker--sun sticker--float" viewBox="0 0 100 100" aria-hidden="true"><use href="#st-sun"/></svg>
+  <svg class="sticker sticker--sun sticker--float" data-easter viewBox="0 0 100 100" role="button" tabindex="0" aria-label="点一下有句话"><use href="#st-sun"/></svg>
   <svg class="sticker sticker--cloud sticker--float" viewBox="0 0 100 100" aria-hidden="true"><use href="#st-cloud"/></svg>
   <svg class="sticker sticker--star" viewBox="0 0 100 100" aria-hidden="true"><use href="#st-star"/></svg>
-  <svg class="sticker sticker--dino" viewBox="0 0 100 100" aria-hidden="true"><use href="#st-dino"/></svg>
+  <svg class="sticker sticker--dino" data-easter viewBox="0 0 100 100" role="button" tabindex="0" aria-label="点一下有句话"><use href="#st-dino"/></svg>
 
   <div class="container hero-content">
     <div class="hero-badge"><span class="hero-badge-dot"></span>聊方向 · 聊团队 · 聊下一步</div>
@@ -280,15 +280,22 @@
     <div class="section-head">
       <span class="eyebrow">Teams &amp; Cities</span>
       <h2 class="section-title">常聊的一线团队</h2>
-      <p class="section-lead">按公司归类，写到具体团队、平时在做的方向和办公地点。想细聊哪条线，直接说就行。</p>
+      <p class="section-lead">按公司归类，写到具体团队、平时在做的方向和办公地点，目前整理到 18 家。想细聊哪条线，直接说就行。</p>
     </div>
 
+    <button type="button" class="scribble-bar" id="scribbleBar" aria-label="换一句随手记">
+      <svg class="scribble-quill" viewBox="0 0 40 40" aria-hidden="true"><use href="#st-sprout"/></svg>
+      <span class="scribble-label">随手记</span>
+      <span class="scribble-text" id="scribbleText">今天适合把方向再核一轮～</span>
+      <span class="scribble-hint" aria-hidden="true">点一下换一句 ↻</span>
+    </button>
+
     <div class="teams-filters" role="group" aria-label="按城市筛选">
-      <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">全部 <span>10</span></button>
-      <button type="button" class="filter-chip" data-filter="beijing" aria-pressed="false">北京 <span>9</span></button>
-      <button type="button" class="filter-chip" data-filter="shanghai" aria-pressed="false">上海 <span>4</span></button>
-      <button type="button" class="filter-chip" data-filter="hangzhou" aria-pressed="false">杭州 <span>3</span></button>
-      <button type="button" class="filter-chip" data-filter="shenzhen" aria-pressed="false">深圳 <span>1</span></button>
+      <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">全部 <span>18</span></button>
+      <button type="button" class="filter-chip" data-filter="beijing" aria-pressed="false">北京 <span>15</span></button>
+      <button type="button" class="filter-chip" data-filter="shanghai" aria-pressed="false">上海 <span>12</span></button>
+      <button type="button" class="filter-chip" data-filter="hangzhou" aria-pressed="false">杭州 <span>4</span></button>
+      <button type="button" class="filter-chip" data-filter="shenzhen" aria-pressed="false">深圳 <span>2</span></button>
     </div>
 
     <div class="teams-grid" id="teamsGrid">
@@ -316,10 +323,10 @@
         </ul>
       </article>
 
-      <article class="team-card" data-city="beijing shanghai hangzhou">
+      <article class="team-card" data-city="beijing shanghai hangzhou shenzhen">
         <div class="team-head">
           <span class="team-index">03</span>
-          <div class="team-id"><h3>字节 · Seed</h3><span class="team-city">北京 · 上海 · 杭州</span></div>
+          <div class="team-id"><h3>字节 · Seed</h3><span class="team-city">北京 · 上海 · 杭州 · 深圳</span></div>
         </div>
         <ul class="role-list">
           <li class="role-item"><span class="role-name">基础模型预训练</span><p>数据怎么配、练到一半怎么补料、模型太大怎么拆开跑、一次能读多长；常见画像是能把方法从论文推到大规模训练的人。</p></li>
@@ -397,14 +404,102 @@
         </ul>
       </article>
 
-      <article class="team-card" data-city="shanghai">
+      <article class="team-card" data-city="shanghai beijing">
         <div class="team-head">
           <span class="team-index">10</span>
-          <div class="team-id"><h3>MiniMax</h3><span class="team-city">上海</span></div>
+          <div class="team-id"><h3>MiniMax</h3><span class="team-city">上海 · 北京</span></div>
         </div>
         <ul class="role-list">
           <li class="role-item"><span class="role-name">基础模型团队</span><p>预训练、调优与多模态整条链路；聊的时候会先看方法细节，而不是关键词。</p></li>
           <li class="role-item"><span class="role-name">推理与效率</span><p>一次能读多长、生成一千字花多少钱，会问改之前的水平和实际并发目标。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai hangzhou beijing">
+        <div class="team-head">
+          <span class="team-index">11</span>
+          <div class="team-id"><h3>小红书 · Dots</h3><span class="team-city">上海 · 杭州 · 北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">Dots 基础模型</span><p>自研大模型的核心团队，从练底子到调答案整条链路都在做，这两年方向铺得比较快。</p></li>
+          <li class="role-item"><span class="role-name">社区 / 搜索算法</span><p>主站的搜索、推荐，以及用大模型做搜索；跟真实流量贴得近，聊的时候会先问你负责哪一段。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai beijing">
+        <div class="team-head">
+          <span class="team-index">12</span>
+          <div class="team-id"><h3>米哈游 · anuttacon</h3><span class="team-city">上海 · 北京</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">前沿研究 · anuttacon</span><p>偏底层：训练数据怎么配、模型规模往上堆时效果怎么变，这类基础问题。</p></li>
+          <li class="role-item"><span class="role-name">应用调优</span><p>把大模型能力落到游戏等具体场景里，会聊效果怎么验、上线之后怎么迭代。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing shanghai">
+        <div class="team-head">
+          <span class="team-index">13</span>
+          <div class="team-id"><h3>Shopee</h3><span class="team-city">北京 · 上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基础模型团队</span><p>练底子和调答案两条线，会问这次涨分主要来自哪一段。</p></li>
+          <li class="role-item"><span class="role-name">应用与智能体</span><p>让模型自己调工具、跑长任务，以及把大模型接进具体业务里。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing shanghai">
+        <div class="team-head">
+          <span class="team-index">14</span>
+          <div class="team-id"><h3>九坤 · 至知</h3><span class="team-city">北京 · 上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">至知基座研究院</span><p>写代码、智能体、按打分训练这几条线；会先看方法细节，而不是关键词。</p></li>
+          <li class="role-item"><span class="role-name">总部智能体团队</span><p>让模型自己调工具、看图答题，以及多模态智能体怎么评效果。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai">
+        <div class="team-head">
+          <span class="team-index">15</span>
+          <div class="team-id"><h3>盛大</h3><span class="team-city">上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">智能体算法</span><p>跟模型本身贴得比较紧，团队不大、方向比较集中。</p></li>
+          <li class="role-item"><span class="role-name">我常问的</span><p>工具调用怎么闭环、一个长任务跑完最后靠什么判断做好了。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai">
+        <div class="team-head">
+          <span class="team-index">16</span>
+          <div class="team-id"><h3>B站 · 哔哩哔哩</h3><span class="team-city">上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">多模态与智能体</span><p>看图看视频、让模型自己调工具、用大模型做搜索，另外有自研的多模态基础模型。</p></li>
+          <li class="role-item"><span class="role-name">我常问的</span><p>视频内容理解的效果怎么评，和生成侧能不能互相借用。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="shanghai">
+        <div class="team-head">
+          <span class="team-index">17</span>
+          <div class="team-id"><h3>记忆张量</h3><span class="team-city">上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">基础模型团队</span><p>练底子和调答案两条线，团队比较新，方向还在一点点铺开。</p></li>
+          <li class="role-item"><span class="role-name">我常问的</span><p>数据怎么来、规模上去之后方法还成不成立。</p></li>
+        </ul>
+      </article>
+
+      <article class="team-card" data-city="beijing shanghai">
+        <div class="team-head">
+          <span class="team-index">18</span>
+          <div class="team-id"><h3>面壁智能</h3><span class="team-city">北京 · 上海</span></div>
+        </div>
+        <ul class="role-list">
+          <li class="role-item"><span class="role-name">行业智能体</span><p>把模型接到具体行业业务里，偏落地的那一段。</p></li>
+          <li class="role-item"><span class="role-name">小模型与工作台</span><p>模型怎么压小、在有限机器上跑得动，以及配套的工具链。</p></li>
         </ul>
       </article>
     </div>
@@ -496,6 +591,40 @@
   </div>
 </footer>
 
+<!-- 右下角「随手逛逛」：轻量的快捷入口，不抢主按钮 -->
+<div class="dock" id="dock">
+  <div class="dock-panel" id="dockPanel" aria-hidden="true">
+    <div class="dock-head">
+      <span class="dock-title">随手逛逛</span>
+      <button type="button" class="dock-close" data-dock-close aria-label="关闭">&times;</button>
+    </div>
+    <p class="dock-note">不用准备简历，先看看哪儿有意思 :)</p>
+    <div class="dock-links">
+      <a href="#focus">看方向</a>
+      <a href="#teams">看团队</a>
+      <a href="#intro">认识一下</a>
+      <a href="#connect">怎么联系</a>
+    </div>
+    <div class="dock-actions">
+      <button type="button" class="copy-btn dock-mini" data-copy="Hello_le_0502">复制微信</button>
+      <button type="button" class="dock-mini dock-mini-primary" data-open-phone>简单聊 15 mins</button>
+    </div>
+    <button type="button" class="dock-top" data-dock-top>回到顶部 ↑</button>
+  </div>
+  <button type="button" class="dock-toggle" id="dockToggle" aria-expanded="false" aria-controls="dockPanel" aria-label="打开随手逛逛">
+    <svg viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="17" fill="#FFFFFF" opacity=".94"/>
+      <circle cx="14.5" cy="17" r="2.4" fill="#238353"/>
+      <circle cx="25.5" cy="17" r="2.4" fill="#238353"/>
+      <path d="M13 24 Q20 30 27 24" fill="none" stroke="#238353" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="9" cy="23" r="2.6" fill="#FFB0A0" opacity=".85"/>
+      <circle cx="31" cy="23" r="2.6" fill="#FFB0A0" opacity=".85"/>
+    </svg>
+    <span class="dock-tip">聊聊？</span>
+  </button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <div class="phone-modal" id="phoneModal" role="dialog" aria-modal="true" aria-labelledby="phoneTitle" aria-hidden="true">
   <div class="phone-backdrop" data-close-phone></div>

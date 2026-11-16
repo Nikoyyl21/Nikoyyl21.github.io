@@ -399,7 +399,102 @@ body.phone-open { overflow: hidden; }
   .team-card { padding: 20px 18px; }
 }
 
+/* ---------- 让页面活一点：入场、随手记、悬浮工作台、彩蛋 ---------- */
+.js-reveal .reveal { opacity: 0; transform: translateY(16px); transition: opacity 560ms ease, transform 560ms ease; }
+.js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+.hero-content { animation: hero-in 620ms ease-out both; }
+@keyframes hero-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.scribble-bar {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;
+  width: fit-content; max-width: 100%; margin: 0 auto 26px; padding: 9px 18px;
+  border: 2px dashed #E9A12E; border-radius: 16px 12px 18px 11px;
+  background: #FFF6D8; color: #8A5A22; font-family: inherit; font-size: 14px; cursor: pointer;
+  transform: rotate(-1deg); box-shadow: var(--shadow-sm);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.scribble-bar:hover { transform: rotate(0deg) translateY(-2px); box-shadow: var(--shadow-md); }
+.scribble-quill { width: 22px; height: 22px; flex: none; }
+.scribble-label { font-weight: 700; font-size: 12px; letter-spacing: 1px; padding: 2px 9px; border-radius: 999px; background: #FFE39B; }
+.scribble-text { font-weight: 600; }
+.scribble-hint { font-size: 12px; opacity: 0.7; }
+.scribble-text.swap { animation: scribble-swap 320ms ease; }
+@keyframes scribble-swap { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-color-scheme: dark) {
+  .scribble-bar { background: #2A3A22; color: #FFD98A; border-color: #B98B3A; }
+  .scribble-label { background: #3E4B2A; }
+}
+
+@keyframes card-pop { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+.team-card.card-pop { animation: card-pop 280ms ease-out; }
+
+.sticker[data-easter] { pointer-events: auto; cursor: pointer; }
+.sticker[data-easter]:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+
+.dock { position: fixed; right: 22px; bottom: 22px; z-index: 60; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.dock-toggle {
+  position: relative; width: 56px; height: 56px; padding: 0; border: 0; border-radius: 50%;
+  background: var(--accent); box-shadow: var(--shadow-lg); cursor: pointer;
+  display: grid; place-items: center; transition: transform 180ms ease, background 180ms ease;
+  animation: dock-breathe 3.4s ease-in-out infinite;
+}
+.dock-toggle:hover { transform: scale(1.08) rotate(-6deg); background: var(--accent-strong); }
+.dock-toggle svg { width: 40px; height: 40px; }
+@keyframes dock-breathe { 0%, 100% { box-shadow: var(--shadow-lg); } 50% { box-shadow: 0 18px 48px rgba(31, 110, 68, 0.28); } }
+.dock-tip {
+  position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+  padding: 5px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-soft); font-size: 12.5px; font-weight: 600; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 180ms ease;
+}
+.dock-toggle:hover .dock-tip, .dock-toggle:focus-visible .dock-tip { opacity: 1; }
+.dock-panel {
+  width: 264px; padding: 18px 18px 16px; border-radius: 20px;
+  background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+  opacity: 0; transform: translateY(10px) scale(0.97); pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.dock.open .dock-panel { opacity: 1; transform: none; pointer-events: auto; }
+.dock-head { display: flex; align-items: center; justify-content: space-between; }
+.dock-title { font-size: 16px; font-weight: 750; }
+.dock-close { width: 26px; height: 26px; border: 1px solid var(--border); border-radius: 50%; background: var(--surface-soft); color: var(--text-soft); font-size: 17px; line-height: 1; cursor: pointer; }
+.dock-close:hover { color: var(--accent); border-color: var(--accent); }
+.dock-note { margin: 8px 0 14px; font-size: 12.5px; color: var(--text-faint); }
+.dock-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.dock-links a { padding: 8px 6px; border-radius: 10px; background: var(--surface-soft); color: var(--text-soft); font-size: 13px; font-weight: 600; text-align: center; }
+.dock-links a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
+.dock-actions { display: flex; gap: 8px; margin-top: 12px; }
+.dock-mini { flex: 1; padding: 8px 6px; border-radius: 999px; font-size: 12.5px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.dock-mini-primary { border: 0; background: var(--accent); color: #FFFFFF; }
+.dock-mini-primary:hover { background: var(--accent-strong); }
+.dock-top { width: 100%; margin-top: 10px; padding: 6px; border: 0; background: none; color: var(--text-faint); font-family: inherit; font-size: 12px; cursor: pointer; }
+.dock-top:hover { color: var(--accent); }
+@media (prefers-color-scheme: dark) { .dock-mini-primary { color: #081A10; } }
+
+.toast {
+  position: fixed; left: 50%; bottom: 32px; transform: translate(-50%, 14px);
+  z-index: 110; max-width: min(90vw, 420px); padding: 12px 20px;
+  border: 2px dashed #E9A12E; border-radius: 16px 12px 18px 11px;
+  background: #FFF6D8; color: #8A5A22; font-size: 14px; font-weight: 600; text-align: center;
+  box-shadow: var(--shadow-lg); opacity: 0; pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-color-scheme: dark) { .toast { background: #2A3A22; color: #FFD98A; border-color: #B98B3A; } }
+
+@media (max-width: 420px) {
+  .dock { right: 14px; bottom: 14px; }
+  .dock-toggle { width: 50px; height: 50px; }
+  .dock-toggle svg { width: 36px; height: 36px; }
+  .dock-panel { width: min(264px, calc(100vw - 28px)); }
+  .scribble-hint { display: none; }
+  .scribble-bar { font-size: 13px; padding: 8px 14px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .card { transition: none; }
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-content, .sticker--float, .dock-toggle, .team-card.card-pop, .scribble-text.swap { animation: none; }
+  .dock-panel, .toast, .dock-toggle { transition: none; }
 }
