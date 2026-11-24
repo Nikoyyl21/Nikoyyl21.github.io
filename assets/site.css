@@ -349,6 +349,15 @@ img, svg { display: block; max-width: 100%; }
 .phone-call { display: inline-flex; align-items: center; padding: 8px 18px; border-radius: var(--radius-full); background: var(--accent); color: #FFFFFF; font-size: 14px; font-weight: 600; }
 .phone-call:hover { background: var(--accent-strong); color: #FFFFFF; text-decoration: none; }
 .phone-note { margin: 0; padding-top: 16px; border-top: 1px dashed var(--border); color: var(--text-faint); font-size: 12.5px; line-height: 1.6; text-align: left; }
+.phone-wechat { cursor: default; }
+.phone-wechat .wechat-id { font-size: 18px; }
+.phone-fallback { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border); text-align: left; }
+.phone-fallback summary { cursor: pointer; color: var(--text-faint); font-size: 13px; list-style: none; }
+.phone-fallback summary::-webkit-details-marker { display: none; }
+.phone-fallback summary::before { content: "+ "; font-family: var(--mono); color: var(--accent); }
+.phone-fallback[open] summary::before { content: "− "; }
+.phone-fallback summary:hover { color: var(--accent); }
+.phone-fallback .phone-number { font-size: clamp(22px, 6vw, 28px); margin: 14px 0 12px; }
 body.phone-open { overflow: hidden; }
 @media (prefers-color-scheme: dark) { .phone-backdrop { background: rgba(2, 18, 10, 0.65); } .phone-call, .phone-call:hover { color: #081A10; } }
 @media (max-width: 420px) { .phone-card { padding: 32px 22px 26px; } }
