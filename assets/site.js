@@ -1,7 +1,7 @@
 /* 滚动入场：只有 JS 生效时才隐藏，避免脚本失效导致整页空白 */
 document.documentElement.classList.add('js-reveal');
 (function () {
-  var targets = document.querySelectorAll('.section-head, .grid, .intro-card, .scribble-bar, .teams-filters, .teams-grid, .teams-note, .connect-box, .footer .container');
+  var targets = document.querySelectorAll('.section-head, .grid, .intro-card, .code-card, .snapshot, .scribble-bar, .teams-filters, .teams-grid, .teams-note, .connect-box, .footer .container');
   if (!targets.length) return;
   if (!('IntersectionObserver' in window)) {
     Array.prototype.forEach.call(targets, function (el) { el.classList.add('reveal', 'is-visible'); });
